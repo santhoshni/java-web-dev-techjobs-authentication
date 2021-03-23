@@ -23,23 +23,7 @@ public class AuthenticationFilter  extends HandlerInterceptorAdapter {
 
     private static final List<String> whitelist = Arrays.asList("/login", "/register", "/logout", "/css");
 
-//    @Override
-//    public boolean preHandle(HttpServletRequest request,
-//                             HttpServletResponse response,
-//                             Object handler) throws IOException {
-//
-//        HttpSession session = request.getSession();
-//        User user = authenticationController.getUserFromSession(session);
-//
-//        // The user is logged in
-//        if (user != null) {
-//            return true;
-//        }
-//
-//        // The user is NOT logged in
-//        response.sendRedirect("/login");
-//        return false;
-//    }
+
     private static boolean isWhitelisted(String path) {
         for (String pathRoot : whitelist) {
             if (path.startsWith(pathRoot)) {

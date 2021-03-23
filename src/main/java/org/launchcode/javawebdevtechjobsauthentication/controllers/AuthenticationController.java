@@ -79,7 +79,7 @@ public class AuthenticationController {
 
         return "redirect:";
     }
-    //@GetMapping("")
+
     @GetMapping("/login")
     public String displayLoginForm(Model model) {
         model.addAttribute(new LoginFormDTO());
@@ -121,7 +121,7 @@ public class AuthenticationController {
     public String logout(HttpServletRequest request){
         request.getSession().invalidate();
         return "redirect:/login";
-        //return "redirect:";
+
     }
     }
 
